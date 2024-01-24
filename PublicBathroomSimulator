@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 
-local Window = OrionLib:MakeWindow({Name = "Public bathroom", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Public bathroom Hub 1.0.0", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 local Tab = Window:MakeTab({
 	Name = "Main",
@@ -88,16 +88,19 @@ end)
   	end    
 })
 
-Tab:AddButton({
+Tab:AddToggle({
  Name = "Spam sound",
- Callback = function()
-  while wait() do
-    wait(0.7)
-    for i, v in pairs(game.Workspace:GetDescendants()) do
-        if v:IsA("ClickDetector") then
-            fireclickdetector(v)
-        end
-    end
+ Default = fasle,
+ Callback = function(Value)
+  game:GetService("CoreGui").PurchasePrompt.Enabled = false
+_G.Lag = Value
+while _G.Lag do
+for i,v in pairs(workspace:GetDescendants()) do
+   if v:IsA("ClickDetector") then
+    fireclickdetector(v)
+   end
 end
+  wait(1)
+  end
  end    
 })

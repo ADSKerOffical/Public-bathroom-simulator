@@ -53,7 +53,20 @@ end
 Tab:AddButton({
 	Name = "Multi gear",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-3/main/Multi%20gear%20activator.lua"))()
+      		lp = game:GetService("Players").LocalPlayer
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+	if key.KeyCode == Enum.KeyCode.E then
+		for i,tool in pairs(lp.Backpack:GetChildren()) do
+			if tool:IsA("Tool") then
+				tool.Parent = lp.Character
+				tool:Activate()
+				task.game:GetService("RunService").RenderStepped:wait()
+				tool.Parent = lp.Backpack
+			end
+		end
+	end
+end)
   	end    
 })
 

@@ -11,7 +11,7 @@ local Tab = Window:MakeTab({
 Tab:AddDropdown({
 	Name = "Multi items",
 	Default = "Multi roll",
-	Options = {"Multi Roll", "Multi Burger", "Multi Pizza", "Multi Coffee", "Multi Soda", "Multi Spray Bottle", "Multi Newspaper", "Multi Soap"},
+	Options = {"Multi Roll", "Multi Burger", "Multi Pizza", "Multi Coffee", "Multi Soda", "Multi Spray Bottle"},
 	Callback = function(Value)
 		if Value == "Multi Roll" then
 		local LP = game.Players.LocalPlayer

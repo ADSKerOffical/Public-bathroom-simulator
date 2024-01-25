@@ -124,3 +124,16 @@ end
   end
  end    
 })
+
+Tab:AddButton({
+	Name = "Anti water",
+	Callback = function()
+		local player = game:GetService("Players").LocalPlayer
+while task.wait() do
+local parts = workspace:GetPartBoundsInRadius(player.Character:WaitForChild("HumanoidRootPart").Position, 10)
+for _, part in ipairs(parts) do
+part.CanTouch = fasle
+end
+end
+	end    
+})

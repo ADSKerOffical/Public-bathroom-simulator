@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 
-local Window = OrionLib:MakeWindow({Name = "Public bathroom Hub 1.0.0", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Public bathroom Hub", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 local Tab = Window:MakeTab({
 	Name = "Main",
@@ -8,10 +8,13 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddButton({
-	Name = "Multi paper",
-	Callback = function()
-      		local LP = game.Players.LocalPlayer
+Tab:AddDropdown({
+	Name = "Multi items",
+	Default = "Multi roll",
+	Options = {"Multi Roll", "Multi Burger", "Multi Pizza", "Multi Coffee", "Multi Soda", "Multi Spray Bottle", "Multi Newspaper", "Multi Soap"},
+	Callback = function(Value)
+		if Value == "Multi Roll" then
+		local LP = game.Players.LocalPlayer
 repeat wait() until LP.Character
 for i,v in pairs(LP.Backpack:GetChildren()) do
    if v.Name == "TpRoll" then
@@ -26,13 +29,9 @@ while true do
        end
    end
 end
-  	end    
-})
-
-Tab:AddButton({
- Name = "Multi burger",
- Callback = function()
-        local LP = game.Players.LocalPlayer
+end
+      if Value == "Multi Burger" then
+      local LP = game.Players.LocalPlayer
 repeat wait() until LP.Character
 for i,v in pairs(LP.Backpack:GetChildren()) do
    if v.Name == "Burger" then
@@ -40,14 +39,83 @@ for i,v in pairs(LP.Backpack:GetChildren()) do
    end
 end
 while true do
-   wait(0.5)
+   wait(1)
    for i,v in pairs (LP.Character:GetChildren()) do
        if v.Name == "Burger" then
            v:Activate()
        end
    end
 end
-   end    
+end
+      if Value == "Multi Pizza" then
+      local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Pizza" then
+       v.Parent = LP.Character
+   end
+end
+while true do
+   wait(1)
+   for i,v in pairs (LP.Character:GetChildren()) do
+       if v.Name == "Pizza" then
+           v:Activate()
+       end
+   end
+end
+end
+     if Value == "Multi Coffee" then
+     local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Coffee" then
+       v.Parent = LP.Character
+   end
+end
+while true do
+   wait(1)
+   for i,v in pairs (LP.Character:GetChildren()) do
+       if v.Name == "Coffee" then
+           v:Activate()
+       end
+   end
+end
+end
+      if Value == "Multi Soda" then
+      local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Soda" then
+       v.Parent = LP.Character
+   end
+end
+while true do
+   wait(1)
+   for i,v in pairs (LP.Character:GetChildren()) do
+       if v.Name == "Soda" then
+           v:Activate()
+       end
+   end
+end
+end
+      if Value == "Multi Spray Bottle" then
+      local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "SprayBottle" then
+       v.Parent = LP.Character
+   end
+end
+while true do
+   wait(1)
+   for i,v in pairs (LP.Character:GetChildren()) do
+       if v.Name == "SprayBottle" then
+           v:Activate()
+       end
+   end
+end
+end
+	end    
 })
 
 Tab:AddButton({

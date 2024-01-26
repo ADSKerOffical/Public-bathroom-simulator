@@ -140,7 +140,7 @@ end)
 
 Tab:AddDropdown({
 	Name = "Tool parts giver",
-	Default = "Destroy parts",
+	Default = "De",
 	Options = {"Destroy parts", "Spin parts", "Wheel parts"},
 	Callback = function(Value)
 		if Value == "Destroy parts" then
@@ -148,7 +148,7 @@ Tab:AddDropdown({
 local mouse = lp:GetMouse()
 
 local ft = Instance.new("Tool")
-ft.Name = "Focus"
+ft.Name = "Destroy parts"
 ft.RequiresHandle = false
 ft.Parent = lp.Backpack
 ft.Activated:Connect(function()

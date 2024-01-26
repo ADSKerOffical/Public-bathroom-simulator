@@ -138,6 +138,80 @@ end)
   	end    
 })
 
+Tab:AddDropdown({
+	Name = "Tool parts giver",
+	Default = "Destroy parts",
+	Options = {"Destroy parts", "Spin parts", "Wheel parts"},
+	Callback = function(Value)
+		if Value == "Destroy parts" then
+		local lp = game.Players.LocalPlayer
+local mouse = lp:GetMouse()
+
+local ft = Instance.new("Tool")
+ft.Name = "Focus"
+ft.RequiresHandle = false
+ft.Parent = lp.Backpack
+ft.Activated:Connect(function()
+ local obj = mouse.Target
+ if obj:IsA("BasePart") or obj:IsA("Part") or obj:IsA("MeshPart") or obj:IsA("CornerWedgePart") or obj:IsA("TrussPart") or obj:IsA("WedgePart") then
+  if not obj.Anchored then
+      local bambam = Instance.new("BodyAngularVelocity")
+      bambam.Name = "BAM BAM AHAHHAHAHHAHAH"
+      bambam.Parent = obj
+      bambam.AngularVelocity = Vector3.new(99999999,99999999,99999999)
+      bambam.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+      bambam.P = math.huge
+     end
+ end
+end)
+		end
+		if Value == "Spin parts" then
+		local lp = game.Players.LocalPlayer
+local mouse = lp:GetMouse()
+
+local ft = Instance.new("Tool")
+ft.Name = "Spin parts"
+ft.RequiresHandle = false
+ft.Parent = lp.Backpack
+ft.Activated:Connect(function()
+ local obj = mouse.Target
+ if obj:IsA("BasePart") or obj:IsA("Part") or obj:IsA("MeshPart") or obj:IsA("CornerWedgePart") or obj:IsA("TrussPart") or obj:IsA("WedgePart") then
+  if not obj.Anchored then
+      local bambam = Instance.new("BodyAngularVelocity")
+      bambam.Name = "BAM BAM AHAHHAHAHHAHAH"
+      bambam.Parent = obj
+      bambam.AngularVelocity = Vector3.new(0,26,0)
+      bambam.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+      bambam.P = math.huge
+     end
+ end
+end)
+end
+        if Value == "Wheel parts" then
+        local lp = game.Players.LocalPlayer
+local mouse = lp:GetMouse()
+
+local ft = Instance.new("Tool")
+ft.Name = "Wheel parts"
+ft.RequiresHandle = false
+ft.Parent = lp.Backpack
+ft.Activated:Connect(function()
+ local obj = mouse.Target
+ if obj:IsA("BasePart") or obj:IsA("Part") or obj:IsA("MeshPart") or obj:IsA("CornerWedgePart") or obj:IsA("TrussPart") or obj:IsA("WedgePart") then
+  if not obj.Anchored then
+      local bambam = Instance.new("BodyAngularVelocity")
+      bambam.Name = "BAM BAM AHAHHAHAHHAHAH"
+      bambam.Parent = obj
+      bambam.AngularVelocity = Vector3.new(1,1,6)
+      bambam.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+      bambam.P = math.huge
+     end
+ end
+end)
+		end
+	end
+})
+
 Tab:AddButton({
 	Name = "Equip tools",
 	Callback = function()
@@ -160,32 +234,6 @@ Tab:AddButton({
     v.Parent = game.Workspace
 end
 end
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Delete doors tool",
-	Callback = function()
-      		local lp = game.Players.LocalPlayer
-local mouse = lp:GetMouse()
-
-local ft = Instance.new("Tool")
-ft.Name = "Delete doors tool"
-ft.RequiresHandle = false
-ft.Parent = lp.Backpack
-ft.Activated:Connect(function()
- local obj = mouse.Target
- if obj:IsA("BasePart") or obj:IsA("Part") or obj:IsA("MeshPart") or obj:IsA("CornerWedgePart") or obj:IsA("TrussPart") or obj:IsA("WedgePart") then
-  if not obj.Anchored then
-      local bambam = Instance.new("BodyAngularVelocity")
-      bambam.Name = "BAM BAM AHAHHAHAHHAHAH"
-      bambam.Parent = obj
-      bambam.AngularVelocity = Vector3.new(99999999,99999999,99999999)
-      bambam.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
-      bambam.P = math.huge
-     end
- end
-end)
   	end    
 })
 
